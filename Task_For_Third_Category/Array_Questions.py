@@ -1,4 +1,3 @@
-
 #Array Questions
     #WAP to find the duplicate number on a given integer array.
 def duplicateNumber(numberArray):                       #def is a keyword 
@@ -9,20 +8,27 @@ def duplicateNumber(numberArray):                       #def is a keyword
             repeatedList.append(number)                 #appending the numbers which are duplicate
         else:                                           #if number not in list
             List.append(number)                         #appending the numbers which are not repeated
-                                                        #if  no repeated numbers in the arg this function return empty list
+                                                        #if  no repeated numbers in the arg this runction return empty list
     return repeatedList                                 #return only the number which are repeated in a list
 
-print(duplicateNumber([1,2,3,4,5,6,2]))
+print(duplicateNumber([1,2,3,4,5,6,2]))                 #calling the function
+
 
 
     #WAP to find all pairs of an integer array whose sum is equal to a given number.
 def integerPairs(integerList,givenNumber):                                                                                  #declaring a function with two argument
     all_pairs_of_sum_equal_to_given_number=[]                                                                               #declaring a variable empty list
-    for firstNumber in range(len(integerList)):                                                                             #iterating over a range of len of given list
+    for firstNumber in range(len(integerList)):                                                                             #iterating over a range of len of giver list
         for secondNumber in range(len(integerList)):                                                                        #iterating over a range of len of given list
-            if firstNumber!=secondNumber:                                                                                   #ensure same number is not checked by adding
+            if firstNumber!=secondNumber:                                                                                   #ensure same numbers are not checked
                 if integerList[firstNumber]+integerList[secondNumber]==givenNumber:                                         #checking the sum of two numbers 
                     if  [integerList[secondNumber],integerList[firstNumber]] not in all_pairs_of_sum_equal_to_given_number: #restricting the repeated pairs
                         all_pairs_of_sum_equal_to_given_number.append([integerList[firstNumber],integerList[secondNumber]]) #appending the pairs in a list
     return all_pairs_of_sum_equal_to_given_number                                                                           #returning all the pairs in a list
 print(integerPairs([1,2,3,4,5,7],3))                                                                                        #calling the function
+
+
+    #WAP to find the missing number in a given integer array of 1 to 100.
+def missingNumberBetween_1_and_100(array):                  #declaration of function
+	return [no for no in range(1,101) if  no not in array]  #number which are missing in the array is appended and returned
+print(missingNumberBetween_1_and_100([1,2,3]))              #Calling of function                                                                                   #calling the function
