@@ -1,3 +1,28 @@
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None  # make None as the default value for next.
+        self.prev = None
+
+nodeA = Node(6)
+nodeB = Node(3)
+nodeC = Node(4)
+nodeD = Node(2)
+nodeE = Node(1)
+nodeF = Node(6)
+
+nodeA.next = nodeB
+nodeB.next = nodeC
+nodeC.next = nodeD
+nodeD.next = nodeE
+nodeE.next = nodeF
+
+nodeF.prev = nodeE
+nodeE.prev = nodeD
+nodeD.prev = nodeC
+nodeC.prev = nodeB
+nodeB.prev = nodeA
+
 #Linked List Questions
     #WAP to find the length of a singly linked list.
 def lengthOfSinglyLinkedList(head): #Function with one argument
