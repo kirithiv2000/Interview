@@ -32,6 +32,7 @@ def lengthOfSinglyLinkedList(head): #Function with one argument
         head=head.next              #next node
     return count                    #return count
 
+
     #WAP to remove duplicate nodes in an unsorted linked list.
 def removeDuplicate(head):           #Function declaration
     List=[]                          #Declare a variable List with an empty list
@@ -39,5 +40,16 @@ def removeDuplicate(head):           #Function declaration
     while nextHead:                  #if nextHead!=None then the loop will run 
         if head.data in List:        #Check data is repeated 
             head.prev.next=head.next #removing the repeated data
+            print(List)
         else:                        #data is not repeated
             List.append(head.data)   #appending data which are not repeated in the list 
+        head=head.next
+        nextHead=head.next
+    if head.data in List:
+        head.prev.next=head.next
+        
+print(lengthOfSinglyLinkedList(nodeA))
+removeDuplicate(nodeA)
+print(lengthOfSinglyLinkedList(nodeA))
+
+
