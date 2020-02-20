@@ -62,7 +62,7 @@ def stringOnlyContainDigitsCheck(givenString):  #declaration of function
 
 
     #7.WAP to count the number of vowels and consonants in a given string.
-def countVowelConsonants(str):
+def countVowelConsonants(str):                   #declaration of function
     vowels="aeiou"                               #declaring a variable named vowels with english vowels in it
     space=0                                      #declare a variable with value 0
     vowelsCount=0                                #declare a variable with value 0
@@ -78,10 +78,23 @@ def countVowelConsonants(str):
 
 print(countVowelConsonants('kirithiv'))          #calling the function
 
+    #8.WAP to count the occurrence of a given character in a string.
+def occurrenceAndCount(str):                                     #declaration of function
+    return {character:str.count(character) for character in str} #returning a dict of keys and values where keys are characters and values are their count
+print(occurrenceAndCount('kirithiv'))                            #calling the function
 
+
+    #10.WAP to reverse words in a given sentence without using any library method.
+def reverseWordsInSentance(str):                    #def is keyword to determine a user defined function
+    splited_list=str.split()                        #spliting the string with the space it results in a list
+    for word in range(len(splited_list)):           #iterating over a range of len of splited list
+        splited_list[word]=splited_list[word][::-1] #reversing the words with help of slicing
+    return " ".join(splited_list)                   #returning after joining the list with a space
+print(reverseWordsInSentance('how are you'))        #calling the function
 
 
     #12.WAP to check if a given string is a palindrome.
 def palindrome(user1):                           #declaration of function      
 	return True if user1[::-1]==user1 else False #return true if palindrome else false with the help of slicing
 print(palindrome('nine'))                        #calling the function
+
