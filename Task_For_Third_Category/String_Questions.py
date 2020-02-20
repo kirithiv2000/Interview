@@ -85,5 +85,3 @@ print(countVowelConsonants('kirithiv'))          #calling the function
 def palindrome(user1):                           #declaration of function      
 	return True if user1[::-1]==user1 else False #return true if palindrome else false with the help of slicing
 print(palindrome('nine'))                        #calling the function
-
-
