@@ -59,6 +59,18 @@ def stringOnlyContainDigitsCheck(givenString):  #declaration of function
             return False                        #return false
     return True                                 #if the for loop run succesfully then the function will return True
 
+    #6.WAP to find duplicate characters in a string.
+def duplicateChr(str):
+    duplicateList=[]
+    checkList    =[]
+    for character in str:
+        if character in checkList:
+            duplicateList.append(character)
+        else:
+            checkList.append(character)
+    return list(set(duplicateList))
+
+print(duplicateChr("kirithiv"))
 
 
     #7.WAP to count the number of vowels and consonants in a given string.
@@ -83,6 +95,20 @@ def occurrenceAndCount(str):                                     #declaration of
     return {character:str.count(character) for character in str} #returning a dict of keys and values where keys are characters and values are their count
 print(occurrenceAndCount('kirithiv'))                            #calling the function
 
+    #9.WAP to find all permutations of a string.
+def permutations(str):
+    if len(str) == 0:
+        return ['']
+    prev_list = permutations(str[1:len(str)])
+    next_list = []
+    for i in range(0,len(prev_list)):
+        for j in range(0,len(str)):
+            new_str = prev_list[i][0:j]+str[0]+prev_list[i][j:len(str)-1]
+            if new_str not in next_list:
+                next_list.append(new_str)
+    return next_list
+
+print(permutations("kiri"))
 
     #10.WAP to reverse words in a given sentence without using any library method.
 def reverseWordsInSentance(str):                    #def is keyword to determine a user defined function
@@ -92,6 +118,17 @@ def reverseWordsInSentance(str):                    #def is keyword to determine
     return " ".join(splited_list)                   #returning after joining the list with a space
 print(reverseWordsInSentance('how are you'))        #calling the function
 
+    #11.WAP to check if two strings are a rotation of each other.
+def rotationCheck(firstString,secondstring):
+    if len(str1) != len(str2):                                                    
+        return False                                                                
+                                                                                
+    for index in range(len(str1)):                                                                                           
+        if str2.startswith(str1[index:]) and str2.endswith(str1[:index]):           
+            return True                                                               
+                                                                                
+    return False
+print(is_rotation('pipkachup','chuppipka'))
 
     #12.WAP to check if a given string is a palindrome.
 def palindrome(user1):                           #declaration of function      
