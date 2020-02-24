@@ -62,7 +62,6 @@ def show(head):
         head=head.next              #next node
     print(head.data)
     #3.WAP to reverse a linked list.
-    #4.WAP to reverse a singly linked list without recursion.
 def reverse(head):
     listofnode=[]                   #Declare a variable count 
     while head.next:                #if head.next = None then the loop break
@@ -81,6 +80,27 @@ def reverse(head):
     # listofnode[0]=None
 show(nodeA)
 reverse(nodeA)
+show(nodeA)    
+    #4.WAP to reverse a singly linked list without recursion.
+
+def reverseSinglyLinked(head):
+    listofnode=[]                   #Declare a variable count 
+    start=head
+    while head.next:                #if head.next = None then the loop break
+        listofnode.append(head.data)
+        head=head.next              #next node
+    listofnode.append(head.data)
+
+
+    count=len(listofnode)-1
+    head=start                      #set the head to the first node
+    while head.next:
+        head.data=listofnode[count]
+        head=head.next
+        count-=1
+    head.data=listofnode[0]        # listofnode[0]=None
+
+reverseSinglyLinked(nodeA)
 show(nodeA)
     #7.WAP to find the third node from the end in a singly linked list.
 def thirdNodeFromEnd(NODE):
